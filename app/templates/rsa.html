@@ -1,0 +1,63 @@
+{% extends "main_layout.html" %}
+
+{% block title %}RSA Encryption{% endblock %}
+
+{% block content %}
+<h1>RSA Encryption</h1>
+<p>Halaman ini menyediakan alat enkripsi dan dekripsi Algoritma RSA.</p>
+
+<h1>File Encryptor/Decryptor</h1>
+<form action="/rsa" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <select name="action">
+        <option value="encrypt">Encrypt</option>
+        <option value="decrypt">Decrypt</option>
+    </select>
+    <button type="submit">Submit</button>
+</form>
+<div class="loader" id="loader"></div>
+<hr>
+<h3>Execution Time: <span id="executionTime">0 seconds</span></h3>
+<h3>Memory Usage: <span id="memoryUsage">0 MB</span></h3>
+<h3>File Size: <span id="fileSize">0 bytes</span></h3>
+<h3>Word Count: <span id="wordCount">0 words</span></h3>
+
+{% endblock %}
+
+{% block js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("form").on("submit", function(event){
+                event.preventDefault(); // Mencegah submit form secara tradisional
+                var formData = new FormData(this);
+
+                // Tampilkan loader
+                $('#loader').show();
+
+                $.ajax({
+                    url: '/rsa',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(data) {
+                        // Update UI dengan data baru
+                        $('#executionTime').text(data.execution_time + ' seconds');
+                        $('#memoryUsage').text(data.memory_used + ' MB');
+                        $('#fileSize').text(data.file_size + ' bytes');
+                        $('#wordCount').text(data.word_count + ' words');
+
+                        // Sembunyikan loader
+                        $('#loader').hide();
+                    },
+                    error: function() {
+                        alert('Error processing your request');
+                        // Sembunyikan loader
+                        $('#loader').hide();
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}
