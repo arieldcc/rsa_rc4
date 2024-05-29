@@ -1,0 +1,23 @@
+Muhammad Ayzed Mirza, Junsheng Yu, Salman Raza, Moez Krichen, Manzoor Ahmed, Wali Ullah Khan, Khaled Rabie, Thokozani Shongwe,
+DRL-assisted delay optimized task offloading in automotive-industry 5.0 based VECNs,
+Journal of King Saud University - Computer and Information Sciences,
+Volume 35, Issue 6,
+2023,
+101512,
+ISSN 1319-1578,
+https://doi.org/10.1016/j.jksuci.2023.02.013.
+(https://www.sciencedirect.com/science/article/pii/S1319157823000423)
+Abstract: The rapid growth of Automotive-Industry 5.0 and its emergence with beyond fifth-generation (B5G) communications, is making vehicular edge computing networks (VECNs) increasingly complex. The latency constraints of modern automotive applications make it difficult to run complex applications on vehicle on-board units (OBUs). While multi-access edge computing (MEC) can facilitate task offloading to execute these applications, it is still a challenge to access them promptly and optimally. Traditional algorithms struggle to guarantee accuracy in such dynamic environment, but deep reinforcement learning (DRL) methods offer improved accuracy, robustness, and real-time decision-making capabilities. In this paper, we propose a DRL-based mobility, contact, and load aware cooperative task offloading (DCTO) scheme. DCTO is designed for both cellular and mmWave radio access technologies (RATs), and both binary and partial offloading mechanisms. DCTO targets delay minimization by opportunistically switching RATs and offloading mechanisms. We consider relative efficacy and neutrality factors as key performance indicators and use them to derive the DRL agent’s reward function. Extensive evaluations demonstrate that the DCTO scheme exhibits a substantial enhancement in task success rate, with an increase from 2.61% to 21.34%. It also improves the efficacy factor from 1.38 to 3.52 and reduces the neutrality factor from 4.99 to 0.76. Furthermore, the average task processing time is reduced by a range of 3.77% to 24.15%. Additionally, the DCTO scheme outperforms the other evaluated schemes in terms of reward and TFPS ratio.
+Keywords: Automotive-Industry 5.0; Vehicular Edge Computing (VEC); Task offloading; Beyond fifth-generation (B5G); Deep Reinforcement Learning (DRL)
+
+Amina Elbatoul Dinar, Samir Ghouali, Boualem Merabet, Mohammed Feham, Mohammed Seghir Guellil, Emad Kamil Hussein,
+5G Network Performance by Cell-Edge Servers Optimization Assignment (5GNP-CESOA),
+Procedia Computer Science,
+Volume 194,
+2021,
+Pages 140-148,
+ISSN 1877-0509,
+https://doi.org/10.1016/j.procs.2021.10.067.
+(https://www.sciencedirect.com/science/article/pii/S1877050921021086)
+Abstract: With the rapid increased growth of Internet of Things (IoT) and 5G networks in smart cities, big data can be generated, resulting in higher latency for the conventional cloud computing model. To enhance users experience, commodity servers were built at the edges of decentralized networks of mini data centers serving regions. Our paper deals with this problem, in purposes of making a total cost optimization assignment cell to servers in Edge computing network where a so-called meta-heuristic (MH) optimization method was chosen. The first task of the present work is devoted to different methods used in server’s Edge placement network optimization including MH methods. Second, the cell assignment to Edge server problem is formulated. The third task is taken up by developing a Tabu Search (TS) application (of fourteen cells network and three Edge servers as a quasi-optimal procedure) for total costs of networks, simulated under MATLAB software. As perspectives, the results compared with other MH methods should be validated, and the server capacity and traffic constraints for each cell have to be added.
+Keywords: Meta-heuristic methods; Tabu Search (TS); Network optimization; Mobile Edge computing; Edge Servers placement; MATLAB

@@ -45,13 +45,17 @@ def rsa():
             initial_memory_usage = memory_usage(-1, interval=0.1, timeout=1)
 
             new_filename = f"rsa_{action}-{formatted_time}.txt"
-            result_path = os.path.join(UPLOAD_FOLDER, new_filename)
-            file.save(result_path)
+            file_path = os.path.join(UPLOAD_FOLDER, new_filename)
+            file.save(file_path)
 
             if action == 'encrypt':
-                result_data = encrypt_file(result_path)
+                result_data = encrypt_file(file_path)
             else:  # decrypt
-                result_data = decrypt_file(result_path)
+                result_data = decrypt_file(file_path)
+
+            # result_path = os.path.join(UPLOAD_FOLDER, f"{action}_result-{formatted_time}.txt")
+            with open(file_path, 'wb') as f:
+                f.write(result_data)
 
             end_time = time.time()
             final_memory_usage = memory_usage(-1, interval=0.1, timeout=1)
@@ -59,11 +63,8 @@ def rsa():
             execution_time = round(end_time - start_time, 4)
             memory_used = round(max(final_memory_usage) - min(initial_memory_usage), 4)
 
-            file_size = os.path.getsize(result_path)
-            word_count = len(open(result_path, 'rb').read().split())
-
-            with open(result_path, 'wb') as f:
-                f.write(result_data)
+            file_size = os.path.getsize(file_path)
+            word_count = len(open(file_path, 'rb').read().split())
 
             return jsonify({
                     'execution_time': execution_time,
